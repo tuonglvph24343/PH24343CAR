@@ -30,6 +30,7 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
+    
         Car::query()->create($request->all());
         return back()->with('msg','success');
     }

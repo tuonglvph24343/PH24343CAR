@@ -7,7 +7,7 @@
             {{ \Session::get('msg') }}
         </div>
     @endif
-    <form action="{{ route('students.update',$student) }}" method="POST">
+    <form action="{{ route('students.update',$student) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -31,6 +31,7 @@
             <label for="" class="form-label">Ảnh</label>
             <input type="file" class="form-control" name="img" id="img" aria-describedby="helpId"
                 placeholder="">
+                <img src="{{ Storage::url($student->img) }}" width="100px" alt="">
         </div>
 
         <div class="form-check">
